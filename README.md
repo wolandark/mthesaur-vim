@@ -39,7 +39,7 @@ Plug 'wolandark/mthesaur-vim'
    ```
    to build for all platforms.
    
-   **Alternatively, you can download pre-built binaries from the build directory, or from realeases.**
+   **Alternatively, you can download pre-built binaries from realeases.**
 
 3. **Install the binary** (choose one):
 
