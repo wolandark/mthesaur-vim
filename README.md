@@ -18,45 +18,64 @@ Inspired by the Python-based [thesaurus_query](https://github.com/Ron89/thesauru
 ## Installation
 ### Easy
 
+Assuming you have Go installed, installed and build the binary in one go (pun intended)
+
+Using [Vim-Plug](https://github.com/junegunn/vim-plug)
 ```
-Plug 'wolandark/mthesaur-vim'
+Plug 'wolandark/mthesaur-vim',{'do': 'make build'}
 ```
 
-1. **Download the mthesaur.txt file**:
-   ```bash
-   mkdir -p ~/.vim
-   wget http://www.gutenberg.org/files/3202/files/mthesaur.txt -O ~/.vim/mthesaur.txt
-   ```
+**Download the mthesaur.txt file**:
+```bash
+mkdir -p ~/.vim
+wget http://www.gutenberg.org/files/3202/files/mthesaur.txt -O ~/.vim/mthesaur.txt
+```
 
-2. **Build the Go binary**:
-   ```bash
-   cd /path/to/plugin/directory
-   make build
-   ```
-   or
-   ```
-   make build-all
-   ```
-   to build for all platforms.
-   
-   **Alternatively, you can download pre-built binaries from realeases.**
+## Manual
+#### Using Vim [packages](https://vimhelp.org/repeat.txt.html#packages)	
 
-3. **Install the binary** (choose one):
+(**needs Vim 8+**)
 
+```
+git clone git@github.com:wolandark/mthesaur-vim.git ~/.vim/pack/plugins/start/mthesaur-vim
+```
+
+Then build the binary:
+```bash
+cd ~/.vim/pack/plugins/start/mthesaur-vim
+make build
+```
+or
+```
+make build-all
+```
+to build for all platforms.
+
+**Alternatively, you can download pre-built binaries from realeases.**
 See [Binary Detection](#binary-detection)
-   ```bash
-   # System-wide installation (requires sudo)
-   make install
-   
-   # Or local installation
-   make install-local
-   ```
 
-4. **Add to your PATH** (if using local installation):
-   ```bash
-   echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-   source ~/.bashrc
-   ```
+The  same goes for other plugin managers.
+
+**Finally Download the mthesaur.txt file**:
+```bash
+mkdir -p ~/.vim
+wget http://www.gutenberg.org/files/3202/files/mthesaur.txt -O ~/.vim/mthesaur.txt
+```
+
+You can choose to build the binary and install it system-wide or locally. The binary can be used independently as well.
+```bash
+# System-wide installation (requires sudo)
+make install
+   
+# Or local installation
+make install-local
+```
+
+**Add to your PATH** (if using local installation):
+```bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
 
 ## Configuration
 
