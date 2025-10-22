@@ -15,6 +15,19 @@ build:
 	go build -o $(BUILD_DIR)/$(BINARY_NAME) $(GO_FILE)
 	@echo "Binary built: $(BUILD_DIR)/$(BINARY_NAME)"
 
+# Cross compile for common platforms
+.PHONY: build-all
+build-all:
+	@echo "Building $(BINARY_NAME) for all platforms..."
+	@mkdir -p $(BUILD_DIR)
+	GOOS=linux   GOARCH=amd64 go build -o $(BUILD_DIR)/$(BINARY_NAME)-linux-amd64   $(GO_FILE)
+	GOOS=linux   GOARCH=arm64 go build -o $(BUILD_DIR)/$(BINARY_NAME)-linux-arm64   $(GO_FILE)
+	GOOS=darwin  GOARCH=amd64 go build -o $(BUILD_DIR)/$(BINARY_NAME)-darwin-amd64  $(GO_FILE)
+	GOOS=darwin  GOARCH=arm64 go build -o $(BUILD_DIR)/$(BINARY_NAME)-darwin-arm64  $(GO_FILE)
+	GOOS=windows GOARCH=amd64 go build -o $(BUILD_DIR)/$(BINARY_NAME)-windows-amd64.exe $(GO_FILE)
+	GOOS=windows GOARCH=arm64 go build -o $(BUILD_DIR)/$(BINARY_NAME)-windows-arm64.exe $(GO_FILE)
+	@echo "All binaries built in $(BUILD_DIR)"
+
 # Install the binary to /usr/local/bin (requires sudo)
 .PHONY: install
 install: build
