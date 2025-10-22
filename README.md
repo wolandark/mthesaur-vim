@@ -31,7 +31,7 @@ Inspired by the Python-based [thesaurus_query](https://github.com/Ron89/thesauru
 
 3. **Install the binary** (choose one):
 
-See #Binary_Detection
+See [Binary Detection](#binary-detection)
    ```bash
    # System-wide installation (requires sudo)
    make install
