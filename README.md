@@ -28,6 +28,13 @@ Inspired by the Python-based [thesaurus_query](https://github.com/Ron89/thesauru
    cd /path/to/plugin/directory
    make build
    ```
+   or
+   ```
+   make build-all
+   ```
+   to build for all platforms.
+   
+   Alternatively, you can download pre-built binaries from the build directory, or from realeases.
 
 3. **Install the binary** (choose one):
 
