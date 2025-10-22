@@ -12,7 +12,7 @@ Inspired by the Python-based [thesaurus_query](https://github.com/Ron89/thesauru
 
 ## Requirements
 
-- Go compiler (for building the binary)
+- Go compiler (only if you wish to build your own binary, otherwise ore-built binaries are available)
 - `mthesaur.txt` file from Project Gutenberg
 
 ## Installation
@@ -34,7 +34,7 @@ Inspired by the Python-based [thesaurus_query](https://github.com/Ron89/thesauru
    ```
    to build for all platforms.
    
-   Alternatively, you can download pre-built binaries from the build directory, or from realeases.
+   **Alternatively, you can download pre-built binaries from the build directory, or from realeases.**
 
 3. **Install the binary** (choose one):
 
@@ -56,6 +56,7 @@ See [Binary Detection](#binary-detection)
 ## Configuration
 
 ### Variables
+Variables are optional. The plugin expects `~/.vim/mthesaur.txt` by default, and auto-detects the Go binary on its own.
 
 - `g:mthesaur_binary`: Path to the Go binary (auto-detected if not set)
 - `g:mthesaur_file`: Path to mthesaur.txt file (default: "~/.vim/mthesaur.txt")
@@ -95,8 +96,11 @@ let g:mthesaur_map_keys = 0
 ## Building
 
 ```bash
-# Build the binary
+# build the binary
 make build
+
+# build the binary for all platforms
+make build-all
 
 # Test the binary
 make test
