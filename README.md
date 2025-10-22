@@ -16,6 +16,11 @@ Inspired by the Python-based [thesaurus_query](https://github.com/Ron89/thesauru
 - `mthesaur.txt` file from Project Gutenberg
 
 ## Installation
+### Easy
+
+```
+Plug 'wolandark/mthesaur-vim'
+```
 
 1. **Download the mthesaur.txt file**:
    ```bash
